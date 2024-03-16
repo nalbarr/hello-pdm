@@ -5,11 +5,18 @@ help:
 	@echo make run-module
 	@echo make run-script
 	@echo make run-module-with-script
+	@echo make run-module-requests
+	@echo ""
 	@echo make clean
+	@echo make all
+	@echo ""
+	@echo make pipx-install
+	@echo make run
 
 # NA:
-# - NOTE: must have pdm installed as pre-requisite
+# - NOTE: must have pdm, pipx installed as pre-requisite
 #   - i.e., https://pdm-project.org/latest/
+#	- i.e., https://github.com/pypa/pipx
 
 # NA
 # - default pdm behavior is editable install
@@ -54,6 +61,10 @@ run-module-with-script: install
 	@echo "***run-module-with-script"
 	python3 -m hello_pdm.main2
 
+run-module-requests: install
+	@echo "***run-module-with-script"
+	python3 -m hello_pdm.requests_example
+
 all: run-script-explicit \
 	run-module \
 	run-script \
@@ -66,3 +77,11 @@ clean:
 	rm -f `find . -type f -name '.*~'`
 	rm -rf .cache
 	rm -rf .pytest_cache
+
+# NA
+# - make pip installable using pipx
+pipx-install:
+	pipx install . --force
+
+run:
+	hello-pdm

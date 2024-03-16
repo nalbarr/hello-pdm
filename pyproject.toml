@@ -2,10 +2,12 @@
 name = "hello-pdm"
 version = "0.1.0"
 description = "Default template for PDM package"
-authors = [
-    {name = "nalbarr", email = "nalbarracin@gmail.com"},
+# authors = [
+#    {name = "", email = ""},
+# ]
+dependencies = [
+    "requests>=2.31.0",
 ]
-dependencies = []
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
@@ -14,6 +16,8 @@ license = {text = "MIT"}
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
+[project.scripts]
+hello-pdm = "hello_pdm.fun:main"
 
 [tool.pdm]
 distribution = true
