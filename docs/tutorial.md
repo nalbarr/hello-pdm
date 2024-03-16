@@ -68,5 +68,16 @@
     - i.e., `pdm list` or `pdm list| grep <module_name>`
 
 - Try exercise different scenarios
-    -  add a external dependency
-    - e.g., `pdm add requests`
+    - add an external dependency
+        - `pdm add requests`
+    - update dependency versions
+        - `pdm update`
+    - understand dependency notations
+        - Compare and contrast pythonic, poetry and others
+        - Caret and tilde notations
+
+- Run external dependency
+    - `make run-module-requests`
+
+- Make project installable
+    - 
